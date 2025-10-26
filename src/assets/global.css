@@ -1,0 +1,16 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Utility class */
+.text-center {
+    text-align: center;
+}
+
+.primary-color {
+    color: #007bff;
+}
