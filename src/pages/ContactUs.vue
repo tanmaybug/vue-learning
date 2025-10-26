@@ -17,7 +17,7 @@
         </div>
 
         <div class="col-md-6">
-          <label for="email" class="form-label">Email</label>
+          <label for="email" class="form-label">Email ID</label>
           <input
             v-model="email"
             type="email"
