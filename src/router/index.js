@@ -1,31 +1,23 @@
+// router/index.js
 import { createRouter, createWebHistory } from 'vue-router'
-import MainLayout from '../layouts/MainLayout.vue'
-import AboutUs from '../pages/AboutUs.vue'
-import ContactUs from '../pages/ContactUs.vue'
-import UserTable from '../pages/UserTable.vue'
-import UserForm from '../pages/UserForm.vue'
+import UserLayout from '../layouts/UserLayout.vue'
+import AdminLayout from '../layouts/AdminLayout.vue'
 
 const routes = [
     {
         path: '/',
-        component: MainLayout,
+        component: UserLayout,
         children: [
-            {
-                path: 'about',
-                component: AboutUs
-            },
-            {
-                path: 'contact',
-                component: ContactUs
-            },
-            {
-                path: 'user',
-                component: UserTable
-            },
-            {
-                path: 'Form',
-                component: UserForm
-            }
+            { path: '', name: 'Home', component: () => import('../views/user/Home.vue') },
+            { path: 'about', name: 'About', component: () => import('../views/user/AboutUs.vue') }
+        ]
+    },
+    {
+        path: '/admin',
+        component: AdminLayout,
+        children: [
+            { path: '', name: 'AdminDashboard', component: () => import('../views/admin/Dashboard.vue') },
+            // { path: 'users', name: 'ManageUsers', component: () => import('../views/admin/Users.vue') }
         ]
     }
 ]
