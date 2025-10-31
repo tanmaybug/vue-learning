@@ -9,7 +9,8 @@ const routes = [
         component: UserLayout,
         children: [
             { path: '', name: 'Home', component: () => import('../views/user/Home.vue') },
-            { path: 'about', name: 'About', component: () => import('../views/user/AboutUs.vue') }
+            { path: 'about', name: 'About', component: () => import('../views/user/AboutUs.vue') },
+            { path: 'registration', name: 'Registration', component: () => import('../views/user/RegForm.vue') }
         ]
     },
     {

@@ -1,4 +1,4 @@
-export function validateContactForm({ name, email, message }) {
+export function validateContactForm({ name, email, address }) {
     const errors = {}
     const namePattern = /^[A-Za-z\s.]+$/
 
@@ -14,8 +14,8 @@ export function validateContactForm({ name, email, message }) {
         errors.email = 'Email is invalid.'
     }
 
-    if (!message.trim()) {
-        errors.message = 'Message is required.'
+    if (!address.trim()) {
+        errors.address = 'Address is required.'
     }
 
     return errors
