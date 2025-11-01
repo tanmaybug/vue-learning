@@ -102,6 +102,7 @@ const submitForm = async () => {
 
 <style>
 .heading{
-  text-align: center
+  text-align: center;
+  text-decoration: underline;
 }
 </style>
