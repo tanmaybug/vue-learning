@@ -53,7 +53,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { validateContactForm } from '../../utils/formValidator'
+import { validateRegFrom } from '../../utils/formValidator'
 import { postData } from '../../services/apiService.js'
 import SuccessModal from '../../components/SuccessModal.vue'
 import ErrorToast from '../../components/ErrorToast.vue'
@@ -74,7 +74,7 @@ const showError = ref(false)
 const errorMessage = ref('')
 
 const submitForm = async () => {
-  errors.value = validateContactForm({ name: name.value,phone:phone.value, email: email.value, pin:pin.value, address: address.value })
+  errors.value = validateRegFrom({ name: name.value,phone:phone.value, email: email.value, pin:pin.value, address: address.value })
 
   if (Object.keys(errors.value).length === 0) {
     try {

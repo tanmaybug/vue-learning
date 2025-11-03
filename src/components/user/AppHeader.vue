@@ -6,8 +6,9 @@
         <router-link to="/">Home</router-link>
         <!-- <router-link to="/user">User</router-link> -->
         <router-link to="/about">About</router-link>
-        <router-link to="/contact">Contact</router-link>
-        <router-link to="/registration">Form</router-link>
+        <!-- <router-link to="/contact">Contact</router-link> -->
+        <router-link to="/registration">Registration</router-link>
+        <router-link to="/view-all">View Reg Data</router-link>
         <router-link to="/admin/">Admin Panel</router-link>
       </div>
     </nav>
