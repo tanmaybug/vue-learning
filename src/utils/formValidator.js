@@ -21,20 +21,21 @@ export function validateContactForm({ name, email, address }) {
     return errors
 }
 
-export function validateRegFrom(name,phone,email,pin,address){
+export function validateRegFrom({name,phone,email,pin,address}){
     const errors = {}
     const namePattern = /^[A-Za-z\s.]+$/
     const phonePattern = /^[6-9]\d{9}$/
+    const emailPattern = /^\S+@\S+\.\S+$/
 
-    if (!name.trim()) {
+    if (!String(name).trim()) {
         errors.name = 'Name is required.'
     } else if (!namePattern.test(name)) {
         errors.name = 'Name can only contain letters, spaces, and dots.'
     }
 
-    if (!phone.trim()) {
+    if (phone=='') {
         errors.phone = 'phone is required.'
-    } else if (!phone.length==10) {
+    } else if (String(phone).length!=10) {
         errors.phone = 'phone numbers must be 10 digit'
     } else if (!phonePattern.test(phone)) {
         errors.phone = 'phone can only contain numbers'
@@ -42,7 +43,7 @@ export function validateRegFrom(name,phone,email,pin,address){
 
     if (!email.trim()) {
         errors.email = 'Email is required.'
-    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+    } else if (!emailPattern.test(email)) {
         errors.email = 'Email is invalid.'
     }
 

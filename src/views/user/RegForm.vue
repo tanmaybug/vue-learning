@@ -74,7 +74,14 @@ const showError = ref(false)
 const errorMessage = ref('')
 
 const submitForm = async () => {
-  errors.value = validateRegFrom({ name: name.value,phone:phone.value, email: email.value, pin:pin.value, address: address.value })
+  console.log(phone.value);
+  errors.value = validateRegFrom({ 
+    name: name.value,
+    phone:phone.value, 
+    email: email.value, 
+    pin:pin.value, 
+    address: address.value 
+  })
 
   if (Object.keys(errors.value).length === 0) {
     try {
